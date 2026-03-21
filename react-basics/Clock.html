@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clock</title>
+    <style>
+      body{
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        
+      }
+    .current-time{
+      font-size: 25px;
+      text-align: center;
+      padding: 10px 25px;
+      background-color: aquamarine;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+     <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>    
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+
+
+      function App(){
+
+
+        const [time, setTime]= React.useState(dayjs().format('HH:mm:ss'));
+
+        React.useEffect(()=>{
+          setInterval(()=>{
+            console.log('run code')
+            setTime(dayjs().format('HH:mm:ss'))
+          },1000)
+        },[])
+
+        return (
+          <p className="current-time">current time is {time}</p>
+        );
+      }
+    
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(< App/>);
+    </script>
+  </body>
+</html>
