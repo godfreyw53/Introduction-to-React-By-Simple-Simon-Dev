@@ -4,7 +4,7 @@ export function HomePage() {
   return (
     <>
     <title>Ecommerce-Project</title>
-      
+      <link rel="shortcut icon"  type="image/x-icon" href="/cart-favicon.png" />
       <Header />
       <div className="home-page">
         <div className="products-grid">
