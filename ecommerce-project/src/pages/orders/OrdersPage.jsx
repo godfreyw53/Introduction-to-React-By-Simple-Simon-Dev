@@ -1,11 +1,11 @@
 import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router";
-import { Header } from "../components/Header";
-import BuyAgainIcon from "../assets/images/icons/buy-again.png";
-import "./OrdersPage.css";
+import { Header } from "../../components/Header";
+import BuyAgainIcon from "../../assets/images/icons/buy-again.png";
+import "../orders/OrdersPage.css";
 import dayjs from "dayjs";
-import { formatMoney } from "../utils/money";
+import { formatMoney } from "../../utils/money";
 export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
 
@@ -54,10 +54,13 @@ export function OrdersPage({ cart }) {
 
                         <div className="product-details">
                           <div className="product-name">
-                           {orderProduct.product.name}
+                            {orderProduct.product.name}
                           </div>
                           <div className="product-delivery-date">
-                            Arriving on: {dayjs(orderProduct.estimatedDeliveryTimeMs).format('MMMM D')}
+                            Arriving on:{" "}
+                            {dayjs(orderProduct.estimatedDeliveryTimeMs).format(
+                              "MMMM D",
+                            )}
                           </div>
                           <div className="product-quantity">
                             Quantity: {orderProduct.quantity}
