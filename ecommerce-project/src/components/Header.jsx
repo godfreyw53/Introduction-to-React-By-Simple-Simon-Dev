@@ -8,7 +8,6 @@ export function Header({cart}){
   let totalQuantity =0;
   cart.forEach((cartItem)=>{
     totalQuantity +=cartItem.quantity
-    console.log(cart)
   });
   
 
