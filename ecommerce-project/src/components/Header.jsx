@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router';
 import CartIcon from '../assets/images/icons/cart-icon.png';
 import SearchIcon from '../assets/images/icons/search-icon.png';
